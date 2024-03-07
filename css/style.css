@@ -79,10 +79,12 @@ form .search-btn:hover {
   width: 600px;
   display: flex;
   flex-direction: column;
+  margin: 20px;
+  border-radius: 5px;
 }
 
 .card .top {
-  height: 50%;
+  height: 60%;
   overflow: hidden;
   border: 3px solid;
 }
@@ -94,10 +96,17 @@ form .search-btn:hover {
 }
 
 .card .bottom {
+  height: 40%;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
 }
 
 .card .bottom p {
   color: var(--bg-primary);
+}
+
+.card .bottom .title {
+  font-size: 24px;
 }

@@ -8,6 +8,7 @@
     <!--css-->
     <link rel="stylesheet" href="./css/style.css" />
     <!--js (defer to not load until later)-->
+    <script src="./js/index.js" defer></script>
     <script src="./js/usedCars.js" defer></script>
   </head>
   <body>
@@ -137,19 +138,6 @@
       </form>
     </header>
     <!--create container for dynamic content below-->
-    <div class="result">
-      <div class="card">
-        <div class="top">
-          <img src="./assets/bmw-5_series.png" alt="Car image" />
-        </div>
-        <div class="bottom">
-          <p class="title">${year} ${color}</p>
-          <p class="title">${make} ${model}</p>
-          <p class="miles">${mileage} miles</p>
-          <p class="mileage">${gasMileage}</p>
-          <p class="price">$${price}</p>
-        </div>
-      </div>
-    </div>
+    <div class="result"></div>
   </body>
 </html>

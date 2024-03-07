@@ -213,3 +213,52 @@ const minMiles = document.getElementById("mine-miles-input");
 const maxMiles = document.getElementById("max-miles-input");
 
 const maxPrice = document.getElementById("price-input");
+
+//element for embedded results
+const result = document.getElementById("result");
+
+//control variables
+let page = 1;
+let isSearching = false;
+
+//html card based on dynamic content
+function createCarCard(car) {
+  //object destructuring
+  const { year, image, make, model, mileage, price, color, gasMileage } = car;
+
+  //dynamic card creation
+  const cardTemplate = `
+    <div class="card">
+      <div class="top">
+        <img src=${image} alt="Car image" />
+      </div>
+      <div class="bottom">
+        <p class="title">${year} ${color} ${make} ${model}</p>
+        <p class="title">$${price}</p>
+        <hr />
+        <p class="miles">${mileage} miles</p>
+        <p class="mileage">${gasMileage}</p>
+      </div>
+    </div>
+  `;
+}
+
+//reset page upon new user search
+function clearResults() {
+  result.innerHTML = "";
+}
+
+//display the dynamic content with car results
+function showResults(item) {
+  const newContent = item.map(createCarCard).join(""); //.join for space between cards
+  result.innerHTML += newContent || "<p> No Results Found. Search Again. </p>";
+}
+
+//main function - init
+async function init() {
+  clearResults();
+  showResults(usedCars);
+}
+
+//call init
+init();
