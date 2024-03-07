@@ -31,10 +31,10 @@ const blueBox = document.getElementById("color-blue");
 const redBox = document.getElementById("color-red");
 const greenBox = document.getElementById("color-green");
 
-const minMiles = document.getElementById("mine-miles-input");
-const maxMiles = document.getElementById("max-miles-input");
+const maxMiles = document.getElementById("miles-input");
 
-const maxPrice = document.getElementById("price-input");
+const minPrice = document.getElementById("min-price-input");
+const maxPrice = document.getElementById("max-price-input");
 
 //element for embedded results
 const result = document.getElementById("result");
