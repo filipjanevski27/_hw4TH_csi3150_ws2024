@@ -1,0 +1,103 @@
+/* Import font styling from google fonts - src: fonts.google.com */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: "Poppins", "Courier New", Courier, monospace;
+  --bg-primary: #2d2a32;
+  --bg-secondary: #b07156;
+  --font-color-primary: #f4f4f9;
+  --font-color-secondary: #e2c044;
+  --backup-color: #de6b48;
+
+  color: var(--font-color-primary);
+}
+
+body {
+  background-color: var(--bg-primary);
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+form {
+  height: 300px;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+form .makes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+form .colors {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+form .pair {
+  margin: 0 10px;
+}
+
+form .search-btn {
+  padding: 3px 6px;
+  background-color: var(--bg-primary);
+  cursor: pointer;
+  border: 1px solid;
+  border-radius: 8px;
+  transition: all 0.5s ease;
+}
+
+form .search-btn:hover {
+  border: 1px solid var(--font-color-secondary);
+  color: var(--font-color-secondary);
+}
+
+/*card styling*/
+.card {
+  background-color: var(--font-color-primary);
+  height: 400px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card .top {
+  height: 50%;
+  overflow: hidden;
+  border: 3px solid;
+}
+
+.card .top img {
+  max-height: 300px;
+  max-width: 600px;
+  object-fit: cover;
+}
+
+.card .bottom {
+  display: flex;
+  align-items: center;
+}
+
+.card .bottom p {
+  color: var(--bg-primary);
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Used Car Sales</title>
+
+    <!--css-->
+    <link rel="stylesheet" href="./css/style.css" />
+    <!--js (defer to not load until later)-->
+    <script src="./js/usedCars.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Used Cars For Sale</h1>
+      <h2>Search Filters</h2>
+      <form id="search-form">
+        <div class="years">
+          <label for="min-year-input">Year:</label>
+          <input type="text" id="min-year-input" placeholder="Min year" />
+          <label for="max-year-input">—</label>
+          <input type="text" id="max-year-input" placeholder="Max year" />
+        </div>
+        <h2>Car Makes</h2>
+        <div class="makes">
+          <div class="pair">
+            <input type="checkbox" id="make-toyota" />
+            <label for="make-toyota">Toyota</label>
+          </div>
+          <div class="pair">
+            <input type="checkbox" id="make-honda" />
+            <label for="make-honda">Honda</label>
+          </div>
+          <div class="pair">
+            <input type="checkbox" id="make-ford" />
+            <label for="make-ford">Ford</label>
+          </div>
+          <div class="pair">
+            <input type="checkbox" id="make-nissan" />
+            <label for="make-nissan">Nissan</label>
+          </div>
+          <div class="pair">
+            <input type="checkbox" id="make-chevrolet" />
+            <label for="make-chevrolet">Chevrolet</label>
+          </div>
+          <div class="pair">
+            <input type="checkbox" id="make-volkswagen" />
+            <label for="make-volkswagen">Volkswagen</label>
+          </div>
+          <div class="pair">
+            <input type="checkbox" id="make-hyundai" />
+            <label for="make-hyundai">Hyundai</label>
+          </div>
+          <div class="pair">
+            <input type="checkbox" id="make-subaru" />
+            <label for="make-subaru">Subaru</label>
+          </div>
+          <div class="pair">
+            <input type="checkbox" id="make-mazda" />
+            <label for="make-mazda">Mazda</label>
+          </div>
+          <div class="pair">
+            <input type="checkbox" id="make-kia" />
+            <label for="make-kia">Kia</label>
+          </div>
+          <div class="pair">
+            <input type="checkbox" id="make-dodge" />
+            <label for="make-dodge">Dodge</label>
+          </div>
+          <div class="pair">
+            <input type="checkbox" id="make-cadillac" />
+            <label for="make-cadillac">Cadillac</label>
+          </div>
+          <div class="pair">
+            <input type="checkbox" id="make-jaguar" />
+            <label for="make-jaguar">Jaguar</label>
+          </div>
+          <div class="pair">
+            <input type="checkbox" id="make-tesla" />
+            <label for="make-tesla">Tesla</label>
+          </div>
+          <div class="pair">
+            <input type="checkbox" id="make-porsche" />
+            <label for="make-porsche">Porsche</label>
+          </div>
+          <div class="pair">
+            <input type="checkbox" id="make-lexus" />
+            <label for="make-lexus">Lexus</label>
+          </div>
+          <div class="pair">
+            <input type="checkbox" id="make-bmw" />
+            <label for="make-bmw">BMW</label>
+          </div>
+        </div>
+        <h2>Colors</h2>
+        <div class="colors">
+          <div class="pair">
+            <input type="checkbox" id="color-silver" />
+            <label for="color-silver">Silver</label>
+          </div>
+          <div class="pair">
+            <input type="checkbox" id="color-white" />
+            <label for="color-white">White</label>
+          </div>
+          <div class="pair">
+            <input type="checkbox" id="color-black" />
+            <label for="color-black">Black</label>
+          </div>
+          <div class="pair">
+            <input type="checkbox" id="color-gray" />
+            <label for="color-gray">Gray</label>
+          </div>
+          <div class="pair">
+            <input type="checkbox" id="color-blue" />
+            <label for="color-blue">Blue</label>
+          </div>
+          <div class="pair">
+            <input type="checkbox" id="color-red" />
+            <label for="color-red">Red</label>
+          </div>
+          <div class="pair">
+            <input type="checkbox" id="color-green" />
+            <label for="color-green">Green</label>
+          </div>
+        </div>
+        <div class="miles">
+          <label for="min-miles-input">Miles:</label>
+          <input type="text" id="min-miles-input" placeholder="Min miles" />
+          <label for="max-miles-input">—</label>
+          <input type="text" id="max-miles-input" placeholder="Max miles" />
+        </div>
+        <div class="price">
+          <label for="price-input">Max Price:</label>
+          <input type="text" id="price-input" placeholder="Price" />
+        </div>
+        <button type="submit" class="search-btn">Apply Filters</button>
+      </form>
+    </header>
+    <!--create container for dynamic content below-->
+    <div class="result">
+      <div class="card">
+        <div class="top">
+          <img src="./assets/bmw-5_series.png" alt="Car image" />
+        </div>
+        <div class="bottom">
+          <p class="title">${year} ${color}</p>
+          <p class="title">${make} ${model}</p>
+          <p class="miles">${mileage} miles</p>
+          <p class="mileage">${gasMileage}</p>
+          <p class="price">$${price}</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
