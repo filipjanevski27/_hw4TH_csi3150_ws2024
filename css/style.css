@@ -40,6 +40,12 @@ form {
   justify-content: space-around;
 }
 
+form .years input,
+form .miles input,
+form .price input {
+  color: var(--bg-primary);
+}
+
 form .makes {
   display: flex;
   flex-wrap: wrap;
