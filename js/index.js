@@ -1,5 +1,6 @@
 //import usedCars from usedCars.js
-import usedCars from "./usedCars.js";
+import { usedCars } from "./usedCars.js";
+console.log("js successfully linked");
 
 //connect input form from html to js
 const form = document.getElementById("search-form");
@@ -72,7 +73,7 @@ function createCarCard(car) {
 
 //reset page upon new user search
 function clearResults() {
-  result.innerHTML = "";
+  result.innerHTML = " ";
 }
 
 //display the dynamic content with car results
@@ -213,7 +214,6 @@ form.addEventListener("submit", handleSearch);
 
 //main function - init
 async function init() {
-  result.innerHTML = `<p>javascript file works at least</p>`;
   clearResults();
   isSearching = false;
   showResults(usedCars);
