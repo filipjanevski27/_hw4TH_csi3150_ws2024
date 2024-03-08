@@ -73,12 +73,13 @@ function createCarCard(car) {
 
 //reset page upon new user search
 function clearResults() {
-  result.innerHTML = " ";
+  result.innerHTML = "";
 }
 
 //display the dynamic content with car results
 function showResults(item) {
-  for (i = 0; i < item.length; i++) {
+  clearResults();
+  for (var i = 0; i < item.length; i++) {
     result.innerHTML += createCarCard(item[i]);
   }
 }
@@ -90,7 +91,7 @@ function handleSearch(e) {
   isSearching = true;
 
   //loop through all elements of usedCars
-  for (i = 0; i < usedCars.length; i++) {
+  for (var i = 0; i < usedCars.length; i++) {
     const car = usedCars[i];
     const isMake = true;
     const isColor = true;

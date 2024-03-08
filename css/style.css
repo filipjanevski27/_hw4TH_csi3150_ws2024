@@ -78,11 +78,17 @@ form .search-btn:hover {
   color: var(--font-color-secondary);
 }
 
+/*results styling*/
+.result {
+  display: flex;
+}
+
 /*card styling*/
 .card {
   background-color: var(--font-color-primary);
+  position: relative;
   height: 400px;
-  width: 600px;
+  width: 500px;
   display: flex;
   flex-direction: column;
   margin: 20px;
@@ -92,6 +98,8 @@ form .search-btn:hover {
 .card .top {
   height: 60%;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
   border: 3px solid;
 }
 
