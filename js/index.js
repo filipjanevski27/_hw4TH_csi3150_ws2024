@@ -5,8 +5,8 @@ import { usedCars } from "./usedCars.js";
 const form = document.getElementById("search-form");
 
 //retrieve user data
-var minYear = parseInt(document.getElementById("min-year-input").value);
-var maxYear = parseInt(document.getElementById("max-year-input").value);
+var minYear = document.getElementById("min-year-input").value;
+var maxYear = document.getElementById("max-year-input").value;
 
 var toyotaBox = document.getElementById("make-toyota");
 var hondaBox = document.getElementById("make-honda");
@@ -36,8 +36,8 @@ var greenBox = document.getElementById("color-green");
 
 var maxMiles = document.getElementById("miles-input").value;
 
-var minPrice = parseInt(document.getElementById("min-price-input").value);
-var maxPrice = parseInt(document.getElementById("max-price-input").value);
+var minPrice = document.getElementById("min-price-input").value;
+var maxPrice = document.getElementById("max-price-input").value;
 
 //element for embedded results
 const result = document.getElementById("result");
@@ -184,6 +184,28 @@ function handleSearch(e) {
         }
         break;
     }
+    //revert isMake to true if no make boxes checked
+    if (
+      !toyotaBox.checked &&
+      !hondaBox.checked &&
+      !fordBox.checked &&
+      !nissanBox.checked &&
+      !chevroletBox.checked &&
+      !volkswagenBox.checked &&
+      !hyundaiBox.checked &&
+      !subaruBox.checked &&
+      !mazdaBox.checked &&
+      !kiaBox.checked &&
+      !dodgeBox.checked &&
+      !cadillacBox.checked &&
+      !jaguarBox.checked &&
+      !teslaBox.checked &&
+      !porscheBox.checked &&
+      !lexusBox.checked &&
+      !bmwBox.checked
+    ) {
+      isMake = true;
+    }
 
     //check color
     switch (car.color) {
@@ -223,9 +245,21 @@ function handleSearch(e) {
         }
         break;
     }
+    //revert isColor if no color boxes checked
+    if (
+      !silverBox.checked &&
+      !whiteBox.checked &&
+      !blackBox.checked &&
+      !grayBox.checked &&
+      !blueBox.checked &&
+      !redBox.checked &&
+      !greenBox.checked
+    ) {
+      isColor = true;
+    }
 
-    //check if text inputs are empty
     if (minYear == NaN || minYear == "") {
+      //check if text inputs are empty
       minYear = 0;
     }
     if (maxYear == NaN || maxYear == "") {
