@@ -87,67 +87,101 @@ function showResults(item) {
 //functionality behind filter searching
 function handleSearch(e) {
   //empty array to add filtered cars
-  const filteredCars = [];
+  var filteredCars = [];
   isSearching = true;
 
   //loop through all elements of usedCars
   for (var i = 0; i < usedCars.length; i++) {
-    const car = usedCars[i];
-    const isMake = true;
-    const isColor = true;
+    var car = usedCars[i];
+    var isMake = true;
+    var isColor = true;
 
     //check make
     switch (car.make) {
-      case "Toyota" && !toyotaBox.checked:
-        isMake = false;
+      case "Toyota":
+        if (!toyotaBox.checked) {
+          isMake = false;
+        }
         break;
-      case "Honda" && !hondaBox.checked:
-        isMake = false;
+      case "Honda":
+        if (!hondaBox.checked) {
+          isMake = false;
+        }
         break;
-      case "Ford" && !fordBox.checked:
-        isMake = false;
+      case "Ford":
+        if (!fordBox.checked) {
+          isMake = false;
+        }
         break;
-      case "Nissan" && !nissanBox.checked:
-        isMake = false;
+      case "Nissan":
+        if (!nissanBox.checked) {
+          isMake = false;
+        }
         break;
-      case "Chevrolet" && !chevroletBox.checked:
-        isMake = false;
+      case "Chevrolet":
+        if (!chevroletBox.checked) {
+          isMake = false;
+        }
         break;
-      case "Volkswagen" && !volkswagenBox.checked:
-        isMake = false;
+      case "Volkswagen":
+        if (!volkswagenBox.checked) {
+          isMake = false;
+        }
         break;
-      case "Hyundai" && !hyundaiBox.checked:
-        isMake = false;
+      case "Hyundai":
+        if (!hyundaiBox.checked) {
+          isMake = false;
+        }
         break;
-      case "Subaru" && !subaruBox.checked:
-        isMake = false;
+      case "Subaru":
+        if (!subaruBox.checked) {
+          isMake = false;
+        }
         break;
-      case "Mazda" && !mazdaBox.checked:
-        isMake = false;
+      case "Mazda":
+        if (!mazdaBox.checked) {
+          isMake = false;
+        }
         break;
-      case "Kia" && !kiaBox.checked:
-        isMake = false;
+      case "Kia":
+        if (!kiaBox.checked) {
+          isMake = false;
+        }
         break;
-      case "Dodge" && !dodgeBox.checked:
-        isMake = false;
+      case "Dodge":
+        if (!dodgeBox.checked) {
+          isMake = false;
+        }
         break;
-      case "Cadillac" && !cadillacBox.checked:
-        isMake = false;
+      case "Cadillac":
+        if (!cadillacBox.checked) {
+          isMake = false;
+        }
         break;
-      case "Jaguar" && !jaguarBox.checked:
-        isMake = false;
+      case "Jaguar":
+        if (!jaguarBox.checked) {
+          isMake = false;
+        }
         break;
-      case "Tesla" && !teslaBox.checked:
-        isMake = false;
+      case "Tesla":
+        if (!teslaBox.checked) {
+          isMake = false;
+        }
         break;
-      case "Porsche" && !porscheBox.checked:
-        isMake = false;
+      case "Porsche":
+        if (!porscheBox.checked) {
+          isMake = false;
+        }
         break;
-      case "Lexus" && !lexusBox.checked:
-        isMake = false;
+      case "Lexus":
+        if (!lexusBox.checked) {
+          isMake = false;
+        }
         break;
-      case "BMW" && !bmwBox.checked:
-        isMake = false;
+      case "BMW":
+        if (!bmwBox.checked) {
+          isMake = false;
+        }
         break;
     }
 
