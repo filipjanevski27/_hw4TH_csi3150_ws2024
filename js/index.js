@@ -85,8 +85,8 @@ function showResults(item) {
 
 //functionality behind filter searching
 function handleSearch(e) {
-  //clear results
-  clearResults();
+  // prevent form from resetting when submit is clicked
+  e.preventDefault();
 
   //loop through all elements of usedCars
   for (var i = 0; i < usedCars.length; i++) {
