@@ -1,44 +1,43 @@
 //import usedCars from usedCars.js
 import { usedCars } from "./usedCars.js";
-console.log("js successfully linked");
 
 //connect input form from html to js
 const form = document.getElementById("search-form");
 
 //retrieve user data
-const minYear = parseInt(document.getElementById("min-year-input").value);
-const maxYear = parseInt(document.getElementById("max-year-input").value);
+var minYear = parseInt(document.getElementById("min-year-input").value);
+var maxYear = parseInt(document.getElementById("max-year-input").value);
 
-const toyotaBox = document.getElementById("make-toyota");
-const hondaBox = document.getElementById("make-honda");
-const fordBox = document.getElementById("make-ford");
-const nissanBox = document.getElementById("make-nissan");
-const chevroletBox = document.getElementById("make-chevrolet");
-const volkswagenBox = document.getElementById("make-volkswagen");
-const hyundaiBox = document.getElementById("make-hyundai");
-const subaruBox = document.getElementById("make-subaru");
-const mazdaBox = document.getElementById("make-mazda");
-const kiaBox = document.getElementById("make-kia");
-const dodgeBox = document.getElementById("make-dodge");
-const cadillacBox = document.getElementById("make-cadillac");
-const jaguarBox = document.getElementById("make-jaguar");
-const teslaBox = document.getElementById("make-tesla");
-const porscheBox = document.getElementById("make-porsche");
-const lexusBox = document.getElementById("make-lexus");
-const bmwBox = document.getElementById("make-bmw");
+var toyotaBox = document.getElementById("make-toyota");
+var hondaBox = document.getElementById("make-honda");
+var fordBox = document.getElementById("make-ford");
+var nissanBox = document.getElementById("make-nissan");
+var chevroletBox = document.getElementById("make-chevrolet");
+var volkswagenBox = document.getElementById("make-volkswagen");
+var hyundaiBox = document.getElementById("make-hyundai");
+var subaruBox = document.getElementById("make-subaru");
+var mazdaBox = document.getElementById("make-mazda");
+var kiaBox = document.getElementById("make-kia");
+var dodgeBox = document.getElementById("make-dodge");
+var cadillacBox = document.getElementById("make-cadillac");
+var jaguarBox = document.getElementById("make-jaguar");
+var teslaBox = document.getElementById("make-tesla");
+var porscheBox = document.getElementById("make-porsche");
+var lexusBox = document.getElementById("make-lexus");
+var bmwBox = document.getElementById("make-bmw");
 
-const silverBox = document.getElementById("color-silver");
-const whiteBox = document.getElementById("color-white");
-const blackBox = document.getElementById("color-black");
-const grayBox = document.getElementById("color-gray");
-const blueBox = document.getElementById("color-blue");
-const redBox = document.getElementById("color-red");
-const greenBox = document.getElementById("color-green");
+var silverBox = document.getElementById("color-silver");
+var whiteBox = document.getElementById("color-white");
+var blackBox = document.getElementById("color-black");
+var grayBox = document.getElementById("color-gray");
+var blueBox = document.getElementById("color-blue");
+var redBox = document.getElementById("color-red");
+var greenBox = document.getElementById("color-green");
 
-const maxMiles = parseInt(document.getElementById("miles-input").value);
+var maxMiles = document.getElementById("miles-input").value;
 
-const minPrice = parseInt(document.getElementById("min-price-input").value);
-const maxPrice = parseInt(document.getElementById("max-price-input").value);
+var minPrice = parseInt(document.getElementById("min-price-input").value);
+var maxPrice = parseInt(document.getElementById("max-price-input").value);
 
 //element for embedded results
 const result = document.getElementById("result");
@@ -86,9 +85,8 @@ function showResults(item) {
 
 //functionality behind filter searching
 function handleSearch(e) {
-  //empty array to add filtered cars
-  var filteredCars = [];
-  isSearching = true;
+  //clear results
+  clearResults();
 
   //loop through all elements of usedCars
   for (var i = 0; i < usedCars.length; i++) {
@@ -225,6 +223,21 @@ function handleSearch(e) {
     }
 
     //check if text inputs are empty
+    if (minYear == NaN || minYear == "") {
+      minYear = 0;
+    }
+    if (maxYear == NaN || maxYear == "") {
+      maxYear = 10000;
+    }
+    if (maxMiles == NaN || maxMiles == "") {
+      maxMiles = 10000000;
+    }
+    if (minPrice == NaN || minPrice == "") {
+      minPrice = 0;
+    }
+    if (maxPrice == NaN || maxPrice == "") {
+      maxPrice = 10000000;
+    }
 
     //check all filters
     if (
@@ -236,12 +249,10 @@ function handleSearch(e) {
       minPrice <= car.price &&
       car.price <= maxPrice
     ) {
-      filteredCars.push(car);
+      //create car card
+      result.innerHTML += createCarCard(car);
     }
   }
-
-  //show results of filtered cars
-  showResults(filteredCars);
 }
 
 //event listener
@@ -250,7 +261,6 @@ form.addEventListener("submit", handleSearch);
 //main function - init
 async function init() {
   clearResults();
-  isSearching = false;
   showResults(usedCars);
 }
 
