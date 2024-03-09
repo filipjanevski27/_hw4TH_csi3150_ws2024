@@ -87,6 +87,8 @@ function showResults(item) {
 function handleSearch(e) {
   // prevent form from resetting when submit is clicked
   e.preventDefault();
+  //empty array for filtered cars
+  var filteredCars = [];
 
   //loop through all elements of usedCars
   for (var i = 0; i < usedCars.length; i++) {
@@ -250,9 +252,10 @@ function handleSearch(e) {
       car.price <= maxPrice
     ) {
       //create car card
-      result.innerHTML += createCarCard(car);
+      filteredCars.push(car);
     }
   }
+  showResults(filteredCars);
 }
 
 //event listener
